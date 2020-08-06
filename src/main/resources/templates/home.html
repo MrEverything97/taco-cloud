@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html xmlns=http://www.w3.org/1999/xhtml
       xmlns:th="http://www.thymeleaf.org">
-<head><title>Taco Cloud</title></head>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <title>Taco Cloud</title>
+</head>
 <body>
 <h1>Welcome to...</h1>
-<img th:src="@{/images/TacoCloud.png}"/>
-<h3>
-    <a href="/design"> Design your Taco</a>
-</h3>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <img th:src="@{/images/TacoCloud.png}" style="width: 500px;height: 500px"/>
+            <h3>
+                <a href="/design"> Design your Taco</a>
+            </h3>
+        </div>
+        <div class="col">
+            <img th:src="@{/images/Tea.jpg}"style="width: 500px;height: 500px"/>
+            <h3>
+                <a href="/design-tea"> Design your Tea</a>
+            </h3>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

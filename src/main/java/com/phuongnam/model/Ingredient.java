@@ -8,7 +8,7 @@ public class Ingredient {
     private Type type;
 
     public static enum Type {
-        WRAP, PROTEIN, VEGGIES, CHEESE, SAUCE
+        WRAP, PROTEIN, VEGGIES, CHEESE, SAUCE , SIZE , SUGAR, ICE,TOPPING
     }
 
     public Ingredient() {

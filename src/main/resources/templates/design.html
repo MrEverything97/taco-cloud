@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head><title>Taco Cloud</title>
+<head>
+    <title>Taco Cloud</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/styles.css}"/>
 </head>
-<body><h1>Design your taco!</h1><img th:src="@{/images/TacoCloud.png}"/>
-<form method="POST" th:object="${design}">
+<body>
+<div class="container">
+<h1>Design your taco!</h1><img th:src="@{/images/TacoCloud.png}" style="width: 500px;height: 500px"/>
+<form class="needs-validation"  method="POST" th:object="${design}">
     <div class="grid">
         <div class="ingredient-group" id="wraps"><h3>Designate your wrap:</h3>
             <div th:each="ingredient : ${wrap}">
@@ -35,9 +41,15 @@
                 <span th:text="${ingredient.name}">INGREDIENT</span><br/></div>
         </div>
     </div>
-    <div><h3>Name your taco creation:</h3><input type="text" th:field="*{name}"/> <br/>
+    <div>
+        <h3>Name your Taco creation:</h3>
+        <input type="text" th:field="*{name}" required/> <br/>
+        <span class="invalid-feedback">
+        Please provide a valid name.
+    </span>
         <button>Submit your taco</button>
     </div>
 </form>
+</div>
 </body>
 </html>
